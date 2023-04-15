@@ -1,3 +1,7 @@
+import sys
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import pyqtSignal
+from PyQt5 import uic   
 import pandas as pd
 import sys
 import io
@@ -5,12 +9,41 @@ import folium as g
 from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 
+#UI파일 연결 코드
+UI_class = uic.loadUiType("mainui.ui")[0]
 
-class MyApp(QWidget):
+#시도군구 default 값
+sido = '서울특별시'
+gungu = '서대문구'
+
+# Main Window
+class MyWindow(QMainWindow, QWidget, UI_class) :
+    def __init__(self) :
+        super().__init__()
+        self.setupUi(self)
+
+        self.btn_1.clicked.connect(self.button1Function) #관광지맵
+        self.btn_get.clicked.connect(self.button2Function)
+
+    def button1Function(self):
+        self.hide()
+        self.myApp = MapWindow()
+        self.myApp.show()
+        self.myApp.closed.connect(self.show)
+
+    def button2Function(self):
+        global sido, gungu
+        sido = self.sido_info.text()
+        gungu = self.gungu_info.text()
+
+
+# Map Window
+class MapWindow(QWidget):
+    closed = pyqtSignal()
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('Folium in PyQt Example')
-        self.window_width, self.window_height = 1600, 1200
+        self.setWindowTitle('Travel Manger')
+        self.window_width, self.window_height = 1280, 720
         self.setMinimumSize(self.window_width, self.window_height)
 
         layout = QVBoxLayout()
@@ -18,8 +51,8 @@ class MyApp(QWidget):
         colums_to_keep = ['POI_NM','CL_NM','CTPRVN_NM','SIGNGU_NM','LC_LO','LC_LA','RDNMADR_NM', ]
         df = pd.read_csv('data.csv', encoding='utf-8', usecols = colums_to_keep)
 
-        CTRVN_NM = '서울특별시' #시도명
-        SIGNGU_NM = '서대문구' #시군구명
+        CTRVN_NM = sido #시도명
+        SIGNGU_NM = gungu #시군구명
 
         ft_df = df[(df['CTPRVN_NM'] == CTRVN_NM) & (df['SIGNGU_NM'] == SIGNGU_NM)]
 
@@ -51,19 +84,14 @@ class MyApp(QWidget):
         webView.setHtml(data.getvalue().decode())
         layout.addWidget(webView)
 
+    def closeEvent(self, event):
+        self.closed.emit()
+        super().closeEvent(event)
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    app.setStyleSheet('''
-        QWidget {
-            font-size: 35px;
-        }
-    ''')
-    
-    myApp = MyApp()
-    myApp.show()
+app = QApplication(sys.argv) 
 
-    try:
-        sys.exit(app.exec_())
-    except SystemExit:
-        print('Closing Window...')
+Window = MyWindow() 
+
+Window.show()
+
+app.exec_()
