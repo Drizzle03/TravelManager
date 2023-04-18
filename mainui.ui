@@ -18,7 +18,7 @@
     <rect>
      <x>60</x>
      <y>90</y>
-     <width>281</width>
+     <width>381</width>
      <height>81</height>
     </rect>
    </property>
@@ -34,7 +34,7 @@
     <string>Travel Manger</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_1">
+  <widget class="QPushButton" name="btn1">
    <property name="geometry">
     <rect>
      <x>690</x>
@@ -43,11 +43,18 @@
      <height>61</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>나눔스퀘어</family>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="text">
     <string>관광명소 추천 MAP</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_2">
+  <widget class="QPushButton" name="btn2">
    <property name="geometry">
     <rect>
      <x>690</x>
@@ -55,6 +62,11 @@
      <width>481</width>
      <height>61</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>나눔스퀘어</family>
+    </font>
    </property>
    <property name="text">
     <string>관광지 포토스팟</string>
@@ -69,6 +81,11 @@
      <height>61</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>나눔스퀘어</family>
+    </font>
+   </property>
    <property name="text">
     <string>지역별 대표 음식 추천</string>
    </property>
@@ -82,6 +99,11 @@
      <height>61</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>나눔스퀘어</family>
+    </font>
+   </property>
    <property name="text">
     <string>방문 관광지 및 숙소 후보군 위치 MAP</string>
    </property>
@@ -91,7 +113,7 @@
     <rect>
      <x>60</x>
      <y>160</y>
-     <width>351</width>
+     <width>421</width>
      <height>31</height>
     </rect>
    </property>
@@ -135,7 +157,7 @@
     <rect>
      <x>70</x>
      <y>390</y>
-     <width>351</width>
+     <width>381</width>
      <height>31</height>
     </rect>
    </property>
@@ -182,7 +204,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;방문하려는 관광지의 &lt;span style=&quot; font-weight:600;&quot;&gt;시도 정보&lt;/span&gt;를 입력해주세요&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_get">
+  <widget class="QPushButton" name="btnget">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -190,6 +212,11 @@
      <width>141</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>나눔스퀘어</family>
+    </font>
    </property>
    <property name="text">
     <string>입력 완료</string>
@@ -206,27 +233,6 @@
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Title2_5">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>470</y>
-     <width>451</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>나눔스퀘어</family>
-     <pointsize>11</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;위에서 도 정보를 입력했다면 시 정보를, 시 정보를 입력했다면, 군구 정보를 입력해주세요&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>
