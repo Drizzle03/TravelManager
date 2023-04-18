@@ -40,9 +40,6 @@ class MyWindow(QMainWindow, QWidget, UI_class):
         global sido, gungu
         sido = self.sido_info.text()
         gungu = self.gungu_info.text()
-        self.myApp = btn2Window()
-        self.myApp.show()
-        self.myApp.closed.connect(self.show)
 
     def button_btn4Function(self):
         self.hide()
@@ -65,7 +62,7 @@ class btn1Window(QWidget):
         self.setLayout(layout)
 
         colums_to_keep = ['POI_NM', 'CL_NM', 'CTPRVN_NM', 'SIGNGU_NM', 'LC_LO', 'LC_LA', 'RDNMADR_NM']
-        df = pd.read_csv(f'{os.getcwd()}/DB/data1.csv', encoding='utf-8', usecols=colums_to_keep)
+        df = pd.read_csv(f'{os.getcwd()}/DB/tour_spot.csv', encoding='utf-8', usecols=colums_to_keep)
 
         CTRVN_NM = sido  # 시도명
         SIGNGU_NM = gungu  # 시군구명
@@ -124,7 +121,7 @@ class btn4Window(QWidget):
         self.setLayout(layout)
 
         colums_to_keep = ['소재지전체주소', '사업장명', '위생업태명', '위도', '경도', '시도', '구']
-        df = pd.read_csv(f'{os.getcwd()}/DB/hotel.csv', encoding='utf-8', usecols=colums_to_keep)
+        df = pd.read_csv(f'{os.getcwd()}/DB/tour_hotel.csv', encoding='utf-8', usecols=colums_to_keep)
 
         CTRVN_NM = sido  # 시도명
         SIGNGU_NM = gungu  # 시군구명
