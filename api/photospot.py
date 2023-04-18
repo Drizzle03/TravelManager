@@ -38,8 +38,3 @@ class Photospot:
         self.result = list(
             dict.fromkeys([self.__load_post_loaction(v) for k, v in enumerate(self.__load_posts(tag=place)) if k < 30]))
         return self.result
-
-
-app = Photospot()
-app.run(place='서울특별시')
-print(app.result)

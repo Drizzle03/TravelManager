@@ -104,7 +104,9 @@ class btn1Window(QWidget):
 
 
 class btn2Window(QWidget):
-    pass
+    app = Photospot()
+    app.run(place='서울특별시')
+    print(app.result)
 
 
 class btn4Window(QWidget):
