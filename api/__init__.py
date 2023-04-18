@@ -1,0 +1,1 @@
+from .photospot import Photospot
