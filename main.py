@@ -19,7 +19,7 @@ gungu = '서대문구'
 class MyWindow(QMainWindow, QWidget, UI_class) :
     def __init__(self) :
         super().__init__()
-        self.setWindowTitle('Travel Manger - Main')
+        self.setWindowTitle('Travel Manager - Main')
         self.setupUi(self)
 
         self.btn1.clicked.connect(self.button1Function) #관광지맵
@@ -101,7 +101,7 @@ class btn4Window(QWidget):
     closed = pyqtSignal()
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('Travel Manger - Hotels')
+        self.setWindowTitle('Travel Manager - Hotels')
         self.window_width, self.window_height = 1280, 720
         self.setMinimumSize(self.window_width, self.window_height)
 
