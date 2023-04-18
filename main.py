@@ -1,15 +1,12 @@
-import sys
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import pyqtSignal
-from PyQt5 import uic   
+import sys 
 import pandas as pd
 import sys
 import io
 import folium as g
-from pyproj import Proj, transform
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QMainWindow
 from PyQt5.QtWebEngineWidgets import QWebEngineView
-from PyQt5.QtCore import QThread, pyqtSignal
+from PyQt5.QtCore import pyqtSignal
+from PyQt5 import uic 
 
 #UI파일 연결 코드
 UI_class = uic.loadUiType("mainui.ui")[0]
