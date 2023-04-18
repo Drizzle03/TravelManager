@@ -30,9 +30,13 @@ class Photospot:
         scrap_script = html.find_all('script')
         for item in scrap_script:
             try:
-                return json.loads(item.text)['contentLocation']['name']
-            except TypeError:
-                return ''
+                location_data = json.loads(item.text)
+                if 'contentLocation' in location_data:
+                    return location_data['contentLocation']['name']
+            except (TypeError, json.JSONDecodeError):
+                continue
+        return ''  # If no valid location is found, return an empty string
+
 
     def run(self, place: str):
         self.result = list(
