@@ -25,3 +25,6 @@ Python 컴퓨팅적 사고 교양 팀플 1 / 여행지 관리 프로그램 기�
     <br>- 시도 군구 주소 정보를 입력 받은 뒤, 위도, 경도 정보로 변환
     <br>- Folium 라이브러리에 전달 후 시각화<br>
 
+  <br><h3>III. 시연영상</h3>
+  https://youtu.be/rP_ANphXJEo
+
