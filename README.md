@@ -26,5 +26,4 @@ Python 컴퓨팅적 사고 교양 팀플 1 / 여행지 관리 프로그램 기�
     <br>- Folium 라이브러리에 전달 후 시각화<br>
 
   <br><h3>III. 시연영상</h3>
-  https://youtu.be/rP_ANphXJEo
-
+  <a href="https://youtu.be/rP_ANphXJEo" target="_blank">https://youtu.be/rP_ANphXJEo </a>
